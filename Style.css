@@ -1,0 +1,155 @@
+*{
+    margin: 0;	/* Define a margem */
+    padding: 0;     /* define o preenchimento interno do box*/
+    box-sizing: border-box; /* Nesse modo o tamanho da borda sempre vai ser o espicifaco*/
+
+}
+
+ul{
+    list-style: none; /*tira o estylo da lsita (os pontinhos)*/
+}
+body*{
+    font-family: 'inter', sans-serif; /* qual a fonte vai ser usada*/
+    line-height: 160%; /* altura da linha*/
+}
+body{
+    background-image: url(./assets/bg.jpg); /* Colocar uma imagem no background*/
+    background-position: top center;        /* a posicão da imagem fica em cima e no meio */
+    background-size: 100% auto;             /* define o tamanho do bacground  (100% na largura e automatico na altura*/
+    background-repeat: no-repeat;           /* define se o background vai repetir ou nao e em qual eixo */
+    background-color: #141212;            /* define a cor do bakcground*/
+}
+
+main {
+    max-width: 580px;         /* define a largura maxima*/
+    width: 90%;               /* defin ea largura */
+    margin: 32px auto;             /* define a margem e nesse caso ela centraliza a imagem*/
+    display: flex;            /* define como é a visualização*/
+    flex-direction: column;   /* define a direção do display flex*/
+    gap: 24px;                /* define a distancia entre os elementos dentro da tag*/
+    margin-top: 32px;         /* define amargem da parte de cima */
+
+}
+
+main section{
+    animation: frombottom .2s backwards;
+}
+
+main section:nth-child(1) {
+    animation-delay: 0;
+}
+
+main section:nth-child(2) {
+    animation-delay: .4s;
+}
+
+main section:nth-child(3) {
+    animation-delay: .8s;
+}
+
+
+header{
+    height: calc(120px + 32px);
+    padding-top: 32px;
+
+}
+
+header img{
+    border-radius: 50%;    /*define a curvatura da borda*/
+    width: 100%;
+
+}
+header div{
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);          /* para conseguir fazer com multiplas cores é usado essa tag e nao o background color */
+    border-radius: 50%;
+    display: flex;
+    padding: 4px;
+    transition: transform .3s;
+    animation: fromtop .3s .2s backwards;
+}
+
+
+header div:hover{
+     transform: scale(1.1);
+}
+
+section{
+    color: #ffffff;                                                                                   /* define a cor das letras */
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);          /* para conseguir fazer com multiplas cores é usado essa tag e nao o background color */
+    padding-top: 4px;    /*usa para colocar a preencimento interno de 4px*/
+    border-radius: 10px;    /*define a curvatura da borda*/
+}
+section div{
+    background-color: #2A2634; /*define a cor do background*/
+    padding: 32px;   /*preenchimento interno*/
+    padding-top: 24px; /*preenchimento interno de cima*/
+    border-radius: 8px;   /*define a curvatura da borda*/
+    
+}
+
+section h2{
+letter-spacing: -0.47px; /*espaço entre as letras*/
+}
+
+section p{
+letter-spacing: -0.18px;  /*espaço entre as letras*/
+color: #A1A1AA;   /*define a cor da letra*/
+}
+section ul{
+    display: flex; /*display flex deixa as caixas dentro dessa caixa nao bloquear a linha inteira*/
+    gap: 16px;      /* define a distancia entre os elementos dentro da tag*/
+    margin-top: 24px; /* deixa uma margem na parte de cima */
+    flex-wrap: wrap;   /*usado para quando exceder o limnite da caixa ele jogar as coisas para baixo*/
+}
+
+section ul li{
+    transition: transform 0.3s;
+}
+
+section ul li:hover{
+transform: scale(1.1);
+}
+
+.Game-List img{
+    width: 90px;          /*define a altura da imagem*/
+    border-radius: 8px;   /*define a curvatura da borda*/
+}
+
+.Channel-List img{ 
+width: 70px;   /*define a altura da imagem*/
+border-radius: 50%;      /*define a curvatura da borda*/
+border: 1px solid #443e54;
+}
+
+
+/* animation*/
+
+
+@keyframes fromtop{
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes frombottom {
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0)
+    }
+
+}
+
+
